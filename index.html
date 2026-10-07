@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Generic CRUD</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid p-4">
+      <div class="row align-items-center">
+        <div class="col-6">
+          <h2 class="text-white mb-0">
+            <i class="fa-solid fa-film"></i>
+            Movies<span class="text-info">Hub</span>
+          </h2>
+        </div>
+        <div class="col-6 text-center">
+          <button class="btn btn-info showmoviemodel" id="showbtn" type="button">
+            Add Movie
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row" id="movies_container"></div>
+    </div>
+
+    <div class="backdrop showmoviemodel" id="backdrop"></div>
+
+    <div class="movimodel" id="movimodel">
+      <form id="movie_form">
+        <div class="card">
+          <div class="card-header bg-info d-flex justify-content-between">
+            <h4 class="mb-0" id="form_heading">Add Movie Form</h4>
+            <i class="fa-solid fa-x fa-2x showmoviemodel" role="button" aria-label="Close"></i>
+          </div>
+
+          <div class="card-body">
+            <div class="form-group">
+              <label for="title_control">Title</label>
+              <input type="text" required class="form-control" placeholder="Enter movie title" id="title_control" />
+            </div>
+
+            <div class="form-group">
+              <label for="desc_control">Description</label>
+              <textarea class="form-control" required rows="4" placeholder="Enter movie description" id="desc_control"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="poster_control">Poster</label>
+              <input type="url" required class="form-control" placeholder="Enter poster URL" id="poster_control" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="rating_control">Movie Rating</label>
+                <select required class="form-control" id="rating_control">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10" selected>10</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="genre_control">Genre</label>
+              <select class="form-control" id="genre_control" required>
+                <option value="" selected disabled>Select Genre</option>
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Horror">Horror</option>
+                <option value="Romance">Romance</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Animation">Animation</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card-footer d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary" id="add_btn">
+              <i class="fa fa-plus"></i> Add Movie
+            </button>
+
+            <button type="button" class="btn btn-warning d-none" id="update_btn">
+              Update Movie
+            </button>
+
+            <button type="button" class="btn btn-secondary ml-2 showmoviemodel" id="cancel_btn">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="spinner d-none" id="spinner">
+      <div class="spinner-border text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
